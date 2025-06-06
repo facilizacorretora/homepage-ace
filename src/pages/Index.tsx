@@ -13,7 +13,7 @@ const Index = () => {
 
         body {
           font-family: 'Poppins', sans-serif;
-          background-color: #0A0F2C;
+          background-color: #0b0f2c;
           color: #FFFFFF;
           line-height: 1.6;
           overflow-x: hidden;
@@ -22,7 +22,7 @@ const Index = () => {
         .homepage-container {
           width: 100%;
           min-height: 100vh;
-          background-color: #0A0F2C;
+          background-color: #0b0f2c;
         }
 
         /* Header */
@@ -32,7 +32,7 @@ const Index = () => {
           left: 0;
           right: 0;
           z-index: 1000;
-          background: rgba(10, 15, 44, 0.95);
+          background: rgba(11, 15, 44, 0.95);
           backdrop-filter: blur(10px);
           border-bottom: 1px solid rgba(232, 178, 109, 0.1);
           padding: 1rem 0;
@@ -75,7 +75,7 @@ const Index = () => {
           min-height: 100vh;
           display: flex;
           align-items: center;
-          background-color: #0A0F2C;
+          background-color: #0b0f2c;
         }
 
         .hero-content {
@@ -139,7 +139,7 @@ const Index = () => {
         /* Section styling */
         .section {
           padding: 100px 0;
-          background-color: #0A0F2C;
+          background-color: #0b0f2c;
         }
 
         .container {
@@ -169,64 +169,69 @@ const Index = () => {
           border-radius: 2px;
         }
 
-        /* Challenges Section */
+        /* Challenges Section - Redesigned */
         .challenges-section {
-          background-color: #0A0F2C;
+          background-color: #0b0f2c;
           position: relative;
-        }
-
-        .challenges-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, rgba(232, 178, 109, 0.03), rgba(232, 178, 109, 0.01));
-          pointer-events: none;
+          padding: 120px 0;
         }
 
         .challenges-intro {
           text-align: center;
-          margin-bottom: 4rem;
+          margin-bottom: 5rem;
           position: relative;
           z-index: 1;
         }
 
         .challenges-intro h2 {
-          font-size: 2.8rem;
+          font-size: 3.2rem;
           font-weight: 700;
-          margin-bottom: 1.5rem;
+          margin-bottom: 2rem;
           color: #E8B26D;
+          position: relative;
+        }
+
+        .challenges-intro h2::after {
+          content: '';
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 4px;
+          background: linear-gradient(135deg, #E8B26D, #D4A055);
+          border-radius: 2px;
         }
 
         .challenges-intro p {
-          font-size: 1.2rem;
-          color: rgba(255, 255, 255, 0.7);
-          max-width: 600px;
+          font-size: 1.3rem;
+          color: rgba(255, 255, 255, 0.8);
+          max-width: 700px;
           margin: 0 auto;
-          line-height: 1.7;
+          line-height: 1.8;
+          margin-top: 2rem;
         }
 
         .challenges-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          gap: 2.5rem;
-          margin-top: 4rem;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 3rem;
+          margin-top: 5rem;
           position: relative;
           z-index: 1;
         }
 
         .challenge-card {
-          background: rgba(255, 255, 255, 0.08);
-          padding: 3rem 2.5rem;
-          border-radius: 16px;
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+          padding: 3.5rem 2.5rem;
+          border-radius: 20px;
           text-align: center;
-          border: 1px solid rgba(232, 178, 109, 0.15);
+          border: 1px solid rgba(232, 178, 109, 0.2);
           backdrop-filter: blur(20px);
-          transition: all 0.4s ease;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           position: relative;
           overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .challenge-card::before {
@@ -236,9 +241,9 @@ const Index = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(232, 178, 109, 0.1), transparent);
+          background: linear-gradient(145deg, rgba(232, 178, 109, 0.1), rgba(232, 178, 109, 0.05));
           opacity: 0;
-          transition: opacity 0.3s ease;
+          transition: opacity 0.4s ease;
         }
 
         .challenge-card:hover::before {
@@ -246,31 +251,39 @@ const Index = () => {
         }
 
         .challenge-card:hover {
-          transform: translateY(-10px);
-          border-color: rgba(232, 178, 109, 0.3);
-          box-shadow: 0 20px 40px rgba(232, 178, 109, 0.15);
+          transform: translateY(-15px) scale(1.02);
+          border-color: rgba(232, 178, 109, 0.4);
+          box-shadow: 0 25px 50px rgba(232, 178, 109, 0.2);
         }
 
         .challenge-icon {
-          width: 60px;
-          height: 60px;
-          background: linear-gradient(135deg, rgba(232, 178, 109, 0.2), rgba(232, 178, 109, 0.1));
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(135deg, rgba(232, 178, 109, 0.3), rgba(232, 178, 109, 0.1));
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 0 auto 2rem;
-          font-size: 1.8rem;
+          margin: 0 auto 2.5rem;
+          font-size: 2.2rem;
           color: #E8B26D;
           position: relative;
           z-index: 2;
+          border: 2px solid rgba(232, 178, 109, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .challenge-card:hover .challenge-icon {
+          background: linear-gradient(135deg, rgba(232, 178, 109, 0.5), rgba(232, 178, 109, 0.2));
+          border-color: rgba(232, 178, 109, 0.6);
+          transform: scale(1.1);
         }
 
         .challenge-card h3 {
-          font-size: 1.4rem;
+          font-size: 1.5rem;
           font-weight: 600;
           color: #FFFFFF;
-          line-height: 1.4;
+          line-height: 1.5;
           position: relative;
           z-index: 2;
         }
@@ -305,7 +318,7 @@ const Index = () => {
           left: 50%;
           transform: translateX(-50%);
           background: #E8B26D;
-          color: #0A0F2C;
+          color: #0b0f2c;
           width: 40px;
           height: 40px;
           border-radius: 50%;
@@ -324,7 +337,7 @@ const Index = () => {
 
         /* Mentor Section */
         .mentor-section {
-          background-color: #0A0F2C;
+          background-color: #0b0f2c;
         }
 
         .mentor-content {
@@ -356,7 +369,7 @@ const Index = () => {
 
         /* Final CTA Section */
         .final-cta {
-          background-color: #0A0F2C;
+          background-color: #0b0f2c;
           text-align: center;
         }
 
@@ -374,7 +387,7 @@ const Index = () => {
 
         /* Footer */
         .footer {
-          background-color: #0A0F2C;
+          background-color: #0b0f2c;
           text-align: center;
           padding: 2rem 0;
           border-top: 1px solid rgba(232, 178, 109, 0.1);
@@ -440,6 +453,16 @@ const Index = () => {
           .container {
             padding: 0 1rem;
           }
+
+          .challenge-icon {
+            width: 70px;
+            height: 70px;
+            font-size: 2rem;
+          }
+
+          .challenges-intro h2 {
+            font-size: 2.5rem;
+          }
         }
 
         @media (max-width: 480px) {
@@ -463,6 +486,12 @@ const Index = () => {
 
           .challenge-card h3 {
             font-size: 1.2rem;
+          }
+
+          .challenge-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
           }
         }
       `}</style>
@@ -498,7 +527,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Challenges Section - Melhorada */}
+      {/* Challenges Section - Redesigned */}
       <section className="section challenges-section">
         <div className="container">
           <div className="challenges-intro">
