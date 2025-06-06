@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Index = () => {
@@ -23,6 +22,7 @@ const Index = () => {
         .homepage-container {
           width: 100%;
           min-height: 100vh;
+          background-color: #0A0F2C;
         }
 
         /* Header */
@@ -48,7 +48,7 @@ const Index = () => {
         }
 
         .logo img {
-          height: 50px;
+          height: 70px;
           width: auto;
         }
 
@@ -75,6 +75,7 @@ const Index = () => {
           min-height: 100vh;
           display: flex;
           align-items: center;
+          background-color: #0A0F2C;
         }
 
         .hero-content {
@@ -138,6 +139,7 @@ const Index = () => {
         /* Section styling */
         .section {
           padding: 100px 0;
+          background-color: #0A0F2C;
         }
 
         .container {
@@ -167,9 +169,9 @@ const Index = () => {
           border-radius: 2px;
         }
 
-        /* Challenges Section - Melhorado */
+        /* Challenges Section */
         .challenges-section {
-          background: rgba(255, 255, 255, 0.02);
+          background-color: #0A0F2C;
           position: relative;
         }
 
@@ -322,7 +324,7 @@ const Index = () => {
 
         /* Mentor Section */
         .mentor-section {
-          background: rgba(255, 255, 255, 0.02);
+          background-color: #0A0F2C;
         }
 
         .mentor-content {
@@ -354,7 +356,7 @@ const Index = () => {
 
         /* Final CTA Section */
         .final-cta {
-          background: linear-gradient(135deg, rgba(232, 178, 109, 0.1), rgba(232, 178, 109, 0.05));
+          background-color: #0A0F2C;
           text-align: center;
         }
 
@@ -372,7 +374,7 @@ const Index = () => {
 
         /* Footer */
         .footer {
-          background: rgba(0, 0, 0, 0.3);
+          background-color: #0A0F2C;
           text-align: center;
           padding: 2rem 0;
           border-top: 1px solid rgba(232, 178, 109, 0.1);
@@ -386,6 +388,10 @@ const Index = () => {
         @media (max-width: 768px) {
           .nav-menu {
             display: none;
+          }
+
+          .logo img {
+            height: 55px;
           }
 
           .hero-content {
