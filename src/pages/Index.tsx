@@ -71,7 +71,7 @@ const Index = () => {
 
         /* Hero Section */
         .hero {
-          padding: 120px 0 80px;
+          padding: 120px 0 100px;
           min-height: 100vh;
           display: flex;
           align-items: center;
@@ -137,7 +137,7 @@ const Index = () => {
 
         /* Section styling */
         .section {
-          padding: 80px 0;
+          padding: 100px 0;
         }
 
         .container {
@@ -148,49 +148,129 @@ const Index = () => {
 
         .section-title {
           text-align: center;
-          font-size: 2.5rem;
+          font-size: 2.8rem;
           font-weight: 700;
-          margin-bottom: 3rem;
+          margin-bottom: 4rem;
           color: #E8B26D;
-        }
-
-        /* Challenges Section */
-        .challenges-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .challenge-card {
-          background: rgba(255, 255, 255, 0.05);
-          padding: 2rem;
-          border-radius: 12px;
-          text-align: center;
-          border: 1px solid rgba(232, 178, 109, 0.1);
-          backdrop-filter: blur(10px);
-          transition: transform 0.3s ease;
           position: relative;
         }
 
-        .challenge-card:hover {
-          transform: translateY(-5px);
+        .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 3px;
+          background: linear-gradient(135deg, #E8B26D, #D4A055);
+          border-radius: 2px;
+        }
+
+        /* Challenges Section - Melhorado */
+        .challenges-section {
+          background: rgba(255, 255, 255, 0.02);
+          position: relative;
+        }
+
+        .challenges-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(232, 178, 109, 0.03), rgba(232, 178, 109, 0.01));
+          pointer-events: none;
+        }
+
+        .challenges-intro {
+          text-align: center;
+          margin-bottom: 4rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        .challenges-intro h2 {
+          font-size: 2.8rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          color: #E8B26D;
+        }
+
+        .challenges-intro p {
+          font-size: 1.2rem;
+          color: rgba(255, 255, 255, 0.7);
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.7;
+        }
+
+        .challenges-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2.5rem;
+          margin-top: 4rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        .challenge-card {
+          background: rgba(255, 255, 255, 0.08);
+          padding: 3rem 2.5rem;
+          border-radius: 16px;
+          text-align: center;
+          border: 1px solid rgba(232, 178, 109, 0.15);
+          backdrop-filter: blur(20px);
+          transition: all 0.4s ease;
+          position: relative;
+          overflow: hidden;
         }
 
         .challenge-card::before {
-          content: "✗";
+          content: '';
           position: absolute;
-          top: -10px;
-          right: -10px;
-          background: #E8B26D;
-          color: #0A0F2C;
-          width: 30px;
-          height: 30px;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(232, 178, 109, 0.1), transparent);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .challenge-card:hover::before {
+          opacity: 1;
+        }
+
+        .challenge-card:hover {
+          transform: translateY(-10px);
+          border-color: rgba(232, 178, 109, 0.3);
+          box-shadow: 0 20px 40px rgba(232, 178, 109, 0.15);
+        }
+
+        .challenge-icon {
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(135deg, rgba(232, 178, 109, 0.2), rgba(232, 178, 109, 0.1));
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-weight: bold;
+          margin: 0 auto 2rem;
+          font-size: 1.8rem;
+          color: #E8B26D;
+          position: relative;
+          z-index: 2;
+        }
+
+        .challenge-card h3 {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #FFFFFF;
+          line-height: 1.4;
+          position: relative;
+          z-index: 2;
         }
 
         /* Differentials Section */
@@ -326,15 +406,21 @@ const Index = () => {
           .challenges-grid,
           .differentials-grid {
             grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .challenge-card {
+            padding: 2.5rem 2rem;
+          }
+
+          .challenges-intro h2,
+          .section-title {
+            font-size: 2.2rem;
           }
 
           .mentor-content {
             grid-template-columns: 1fr;
             text-align: center;
-          }
-
-          .section-title {
-            font-size: 2rem;
           }
 
           .final-cta h2 {
@@ -362,7 +448,15 @@ const Index = () => {
 
           .challenge-card,
           .differential-card {
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
+          }
+
+          .challenges-intro h2 {
+            font-size: 2rem;
+          }
+
+          .challenge-card h3 {
+            font-size: 1.2rem;
           }
         }
       `}</style>
@@ -398,21 +492,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Challenges Section */}
-      <section className="section">
+      {/* Challenges Section - Melhorada */}
+      <section className="section challenges-section">
         <div className="container">
-          <h2 className="section-title">Você enfrenta estes desafios?</h2>
+          <div className="challenges-intro">
+            <h2>Você enfrenta estes desafios?</h2>
+            <p>Se você é corretor de seguros e está enfrentando essas dificuldades, saiba que você não está sozinho. O Método Elite foi criado para resolver exatamente esses problemas.</p>
+          </div>
           <div className="challenges-grid">
             <div className="challenge-card">
+              <div className="challenge-icon">⚠️</div>
               <h3>Dificuldade em atrair clientes qualificados</h3>
             </div>
             <div className="challenge-card">
+              <div className="challenge-icon">😰</div>
               <h3>Insegurança na hora de vender</h3>
             </div>
             <div className="challenge-card">
+              <div className="challenge-icon">📊</div>
               <h3>Rotina desorganizada e sem planejamento</h3>
             </div>
             <div className="challenge-card">
+              <div className="challenge-icon">💸</div>
               <h3>Baixo faturamento e falta de previsibilidade</h3>
             </div>
           </div>
